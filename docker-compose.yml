@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  user-service:
+    image: "user-service"
+    ports:
+      - 2022:2022
+    depends_on:
+      - elastic
+    restart: always
+
+  elastic:
+    image: "elasticsearch"
+    ports:
+      - 9200:9200
