@@ -24,21 +24,21 @@ ES is running on port `9200`
 
 ### Get single user
 
-GET /users/:username
+    GET /users/:username
 
 ### Sync single user with GitHub
 
-GET /users-sync/:username
+    GET /users-sync/:username
 
 ## Repository Ressource
 
 ### Get repositories for a single user
 
-GET /repos/:username
+    GET /repos/:username
 
 ### Sync respositories for a single user with GitHub
 
-GET /repos-sync/:username
+    GET /repos-sync/:username
 
 
 
