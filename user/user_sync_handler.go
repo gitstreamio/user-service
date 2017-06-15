@@ -7,8 +7,6 @@ import (
 	"fmt"
 )
 
-// TODO get token from request
-const token string = "1aafed65ecb213cddb83f62d9d8c377f92107ef7"
 
 type UserSyncHandler struct {
 	userService *UserService
@@ -22,6 +20,7 @@ func NewUserSyncHandler(ctx context.Context) *UserSyncHandler{
 func (srv *UserSyncHandler) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	login := vars["login"]
+	token := ""   // TODO get token from request
 	err := srv.userService.SyncUser(login, token)
 	if err != nil {
 		log.WithError(err).Error(fmt.Sprintf("User sync failed for user: %s", login))
