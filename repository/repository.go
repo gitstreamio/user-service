@@ -97,7 +97,7 @@ func (s *RepositoryService) SyncUserRepositories(login string, gitHubApiToken st
 		return err
 	}
 	for _, githubRepo := range githubRepos {
-		if repo := findGitHubRepoInIndex(githubRepo, gitstreamRepos); repo == nil {
+		if repo := gitHubRepoExists(githubRepo, gitstreamRepos); repo == nil {
 			err = s.indexUserRepo(login, githubRepo)
 		} else {
 			s.updateUserRepo(repo, githubRepo)
@@ -140,7 +140,7 @@ func (s *RepositoryService) updateUserRepo(gitstreamRepo *Repository, githubRepo
 	return err
 }
 
-func findGitHubRepoInIndex(githubRepo *github.Repository, gitstreamRepos []*Repository) (*Repository) {
+func gitHubRepoExists(githubRepo *github.Repository, gitstreamRepos []*Repository) (*Repository) {
 	for _, gitstreamRepo := range gitstreamRepos {
 		if *gitstreamRepo.FullName == *githubRepo.FullName {
 			return gitstreamRepo
