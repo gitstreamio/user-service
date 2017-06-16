@@ -33,7 +33,7 @@ func NewUserService(ctx context.Context) *UserService {
 
 // User represents a GitHub user.
 type User struct {
-	Id        *string    `json:"_id,omitempty"`
+	Id        *string    `json:"id,omitempty"`
 	Login     *string    `json:"login,omitempty"`
 	Name      *string    `json:"name,omitempty"`
 	Email     *string    `json:"email,omitempty"`

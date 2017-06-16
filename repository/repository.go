@@ -35,7 +35,7 @@ func NewRepositoryService(ctx context.Context) *RepositoryService {
 
 // Repository represents a GitHub repository.
 type Repository struct {
-	Id           *string    `json:"_id,omitempty"`
+	Id           *string    `json:"id,omitempty"`
 	Name         *string    `json:"name,omitempty"`
 	FullName     *string    `json:"fullname,omitempty"`
 	Description  *string    `json:"description,omitempty"`
