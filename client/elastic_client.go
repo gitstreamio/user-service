@@ -16,7 +16,6 @@ func NewElasticClient(ctx context.Context, index string) (*ElasticClient, error)
 	if err != nil {
 		return nil, err
 	}
-
 	indexExists, err := client.IndexExists().Index([]string{index}).Do(ctx)
 	if err != nil {
 		return nil, err
