@@ -28,7 +28,7 @@ ES is running on port `9200`
 
 ### Sync single user with GitHub
 
-    curl -H "Authorization: Bearer OAUTH-TOKEN" -X GET localhost:2022/users-sync/:username
+    curl -H "Authorization: Bearer GITHUB-OAUTH-TOKEN" -X GET localhost:2022/users-sync/:username
 
 ## Repository Ressource
 
@@ -38,7 +38,7 @@ ES is running on port `9200`
 
 ### Sync respositories for a single user with GitHub
 
-    curl -H "Authorization: Bearer OAUTH-TOKEN" localhost:2022/repos-sync/:username
+    curl -H "Authorization: Bearer GITHUB-OAUTH-TOKEN" localhost:2022/repos-sync/:username
 
 
 
